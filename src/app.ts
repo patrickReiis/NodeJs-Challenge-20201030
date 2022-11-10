@@ -1,4 +1,8 @@
-import express, {Application, Request, Response } from 'express';
+import express, { Application } from 'express';
+import { statusHandler, listProductsHandler, specificProductHandler } from './routes/get-handler';
+import { updateProductHandler } from './routes/put-handler';
+import { deleteHandler } from './routes/delete-handler';
+
 
 export const app:Application = express();
 
