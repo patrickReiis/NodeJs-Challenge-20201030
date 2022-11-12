@@ -9,6 +9,10 @@
     "build": "tsc -p .",
     "test": ""
   },
+  "nodemonConfig": {
+    "ignore": ["*.json", "*.gz"]
+
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/patrickReiis/NodeJs-Challenge-20201030.git"
