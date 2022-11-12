@@ -135,7 +135,7 @@ async function downloadFileToDb(currentFile:string) {
                 const productFile = fs.createReadStream('file.json');
                 const readStreamLine = readline.createInterface({
                     input: productFile,
-                    out: 'file.json',
+                    output: 'file.json',
                     terminal: false
                 });
 
