@@ -11,4 +11,7 @@ export class Product {
 
     @Column('jsonb')
     food!: { [k:string]: string|number };
+
+    @Column('timestamp')
+    imported_t!: Date;
 }
