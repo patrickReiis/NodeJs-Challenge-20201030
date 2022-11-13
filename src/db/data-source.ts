@@ -2,6 +2,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import { DataSource } from 'typeorm';
 import { Product } from './entity/Product';
+import { CronTrack } from './entity/CronTrack';
 
 export const dataSource = new DataSource({
     type: 'postgres',
@@ -12,7 +13,7 @@ export const dataSource = new DataSource({
     database: 'food_challenge',
     synchronize: true,
     logging: false,
-    entities: [Product],
+    entities: [Product, CronTrack],
     subscribers: [],
     migrations: [],
 })
