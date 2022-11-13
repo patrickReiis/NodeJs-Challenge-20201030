@@ -1,4 +1,5 @@
-import "reflect-metadata"
+import 'reflect-metadata';
+import './cron/execute';
 import express, { Application } from 'express';
 import { statusHandler, listProductsHandler, specificProductHandler } from './routes/get-handler';
 import { updateProductHandler } from './routes/put-handler';
