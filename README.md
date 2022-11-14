@@ -1,3 +1,6 @@
+Este projeto é um tech challenge que irá me fazer avançar no processo seletivo (caso eu passe) de uma determinada empresa 
+para conseguir uma vaga como programador node.
+
 # Como rodar o projeto:
 
 ## Criar database
