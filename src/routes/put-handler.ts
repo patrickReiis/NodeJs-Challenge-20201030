@@ -17,10 +17,7 @@ export async function updateProductHandler(req:Request, res:Response) {
         const product = await dataSource
             .query(`select * from product where food -> 'code' ? '${productCode}'`);
 
-        for (const key of Object.keys(req.body)) { //typeerro
-            if (key == 'imported_t' ) {
-                product[0].imported_t = req.body?.imported_t;
-            }
+        for (const key of Object.keys(req.body)) {
             if (key == 'status' ) {
                 product[0].status = req.body?.status;
             }
@@ -39,8 +36,8 @@ export async function updateProductHandler(req:Request, res:Response) {
 }
 
 function areKeysAllowed(body: object):boolean {
-    // cannot update code key
-    const keysWithoutCode = allowedKeys.filter(e => e != 'code');
+    // cannot update code key and imported_t
+    const keysWithoutCode = allowedKeys.filter(e => e != 'code' && e != 'imported_t');
 
     const bodyKeys = Object.keys(body);
 
