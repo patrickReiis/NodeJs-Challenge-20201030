@@ -1,4 +1,4 @@
-## Como rodar o projeto:
+# Como rodar o projeto:
 
 ## Criar database
 ```
@@ -10,10 +10,11 @@ postgres=# \q
 
 ## Setup .env
 Dentro da pasta root, crie um arquivo .env
+
 O arquivo .env utiliza a seguinte estrutura:
 ```
-DB_USERNAME=winlectro
-DB_PASSWORD=EZFORCOiseverything
+DB_USERNAME=
+DB_PASSWORD=
 ```
 
 ## Instale as dependências
