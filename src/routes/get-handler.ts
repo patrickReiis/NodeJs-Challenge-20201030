@@ -64,6 +64,34 @@ export async function listProductsHandler(req:Request, res:Response) {
     }
 }
 
-export function specificProductHandler(req:Request, res:Response) {
-    res.end('only one product');
+export async function specificProductHandler(req:Request, res:Response) {
+    const productCode = decodeURIComponent(req.url.slice('/products/'.length));
+
+    try {
+        const product = await dataSource
+        .query(`select * from product where food -> 'code' ? '${productCode}'`);
+
+        if (product.length == 0) {
+            res.writeHead(404, {'Content-Type': 'application/json'});
+            res.end()
+            return
+        }
+
+        const productFormatted = product.map((e:any, i:number) => {
+            e['food'];
+            e.food.imported_t = (e.imported_t as unknown) as string;
+            e.food.status= e.status;
+            return e['food']
+        }) 
+
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.end(JSON.stringify(productFormatted[0]));
+        return
+    }
+    catch (e) {
+        console.log(e);
+        res.writeHead(500);
+        res.end();
+        return
+    }
 }
