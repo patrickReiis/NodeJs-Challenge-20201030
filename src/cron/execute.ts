@@ -9,8 +9,8 @@ const zlib = require('node:zlib');
 const readline = require('node:readline');
 
 // task will happen every hour:minute
-const hour = '18'; 
-const minute = '15'; 
+export const hour = '18' as const; 
+export const minute = '15' as const; 
 
 // number of products that will be imported
 const maxImport = 100;
