@@ -27,7 +27,7 @@ const filesOpenFood = [
      'https://challenges.coode.sh/food/data/json/products_09.json.gz'
 ] as const;
 
-const allowedKeys =  [
+export const allowedKeys =  [
     'code',             'status',
     'imported_t',       'url',
     'creator',          'created_t',
