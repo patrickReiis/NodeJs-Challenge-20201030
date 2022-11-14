@@ -22,7 +22,7 @@ DB_PASSWORD=
 $ npm install
 ```
 
-## Compilando .ts para .js
+## Compilando typescript para javascript
 ```
 $ npm run build
 ```
