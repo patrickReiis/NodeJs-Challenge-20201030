@@ -17,9 +17,9 @@ app.get('/', statusHandler);
 app.get('/products', listProductsHandler);
 
 // All the following routes will have the format:
-// /products/<any-number>
-// e.g: /products/123
-const productIdRoute = '/products/:code([0-9]+)'
+// /products/<any-text>
+// e.g: /products/123a
+const productIdRoute = '/products/:code'
 
 app.get(productIdRoute, specificProductHandler)
 
